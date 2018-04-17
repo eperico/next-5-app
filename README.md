@@ -1,11 +1,12 @@
 # next-5-app
-"Next 5" Web app that consumes an API and list of the next 5 races that are open for betting.
+"Next 5" Web app that consumes an API and lists of the next 5 races that are opened for betting.
 
 ## Technologies Used
 
   - [NodeJs](https://nodejs.org/en/) >= 6.11.0
   - [React](https://facebook.github.io/react/)
   - [Redux](http://redux.js.org/)
+  - [ES6](http://es6-features.org/)
   - [Webpack](https://webpack.github.io/)
   - [Babel](https://babeljs.io/)
 
