@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
 import { Link }             from 'react-router';
-
-// actions
-import { fetchRaces } from '../../actions/raceActions';
-
-// components
-import List from '../components/List';
+import AppBar               from 'material-ui/AppBar';
+import {List, ListItem}     from 'material-ui/List';
 
 /*
 * Home page to navigate the all races or specific race type
 */
 class Home extends Component {
 
+  navigateTo(route) {
+    this.props.router.push(route)
+  }
+
   render() {
     return (
       <div>
-        <h2>Welcome to Next 5 App</h2>
-        <Link to="/races/all">All the races</Link><br/>
-        <Link to="/races/r">Thoroughbred</Link><br/>
-        <Link to="/races/g">Greyhounds</Link><br/>
-        <Link to="/races/h">Harness</Link>
+        <AppBar title="Welcome to Next 5 App"/>
+        <List>
+          <ListItem primaryText="All Racing" onClick={() => this.navigateTo('/races/all')}/>
+          <ListItem primaryText="Thoroughbred Racing" onClick={() => this.navigateTo('/races/r')}/>
+          <ListItem primaryText="Greyhounds Racing" onClick={() => this.navigateTo('/races/g')}/>
+          <ListItem primaryText="Harness Racing" onClick={() => this.navigateTo('/races/h')}/>
+        </List>
       </div>
     )
   }

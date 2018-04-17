@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
 import { connect }          from 'react-redux';
 import { Link }             from 'react-router';
+import AppBar               from 'material-ui/AppBar';
+import IconButton           from 'material-ui/IconButton';
+import BackButton           from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 
 // actions
 import { fetchRaces } from '../../actions/raceActions';
@@ -37,10 +40,13 @@ class Races extends Component {
 
     return (
       <div>
-        <Link to="/">Back</Link>
-        <h3>Upcoming races</h3>
+        <AppBar 
+          title="Next To Go"
+          iconElementLeft={<IconButton><BackButton /></IconButton>}
+          onLeftIconButtonClick={() => this.props.router.goBack()}
+        />
         <List items={races.list} raceType={this.props.params.raceType} onRaceStarted={() => this.refreshRaces()}/>
-        <p>last updated: {new Date(races.lastUpdated).toString()}</p>
+        <p>Last updated: {new Date(races.lastUpdated).toString()}</p>
       </div>
     );
   }

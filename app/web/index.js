@@ -4,6 +4,7 @@ import { render }       from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import configureStore   from '../store/configureStore';
 import Root             from './containers/Root';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // load the style
 require('./styles/common.sass');
@@ -13,7 +14,9 @@ const rootElement = document.getElementById('root');
 
 render(
     <AppContainer>
-      <Root store={store}/>
+      <MuiThemeProvider>
+        <Root store={store}/>
+      </MuiThemeProvider>  
     </AppContainer>,
     rootElement
 );
@@ -24,7 +27,9 @@ if (module.hot) {
     const NewRoot = require('./containers/Root').default;
     render(
       <AppContainer>
-        <NewRoot store={store}/>
+        <MuiThemeProvider>
+          <NewRoot store={store}/>
+        </MuiThemeProvider>
       </AppContainer>,
       rootElement
     );

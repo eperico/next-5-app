@@ -1,6 +1,13 @@
-import React, { Component }       from 'react'
-import { Link }                   from 'react-router'
-import PropTypes                  from 'prop-types'
+import React, { Component }       from 'react';
+import { Link }                   from 'react-router';
+import PropTypes                  from 'prop-types';
+import FlatButton                 from 'material-ui/FlatButton';
+import { 
+  Card,
+  CardActions,
+  CardHeader,
+  CardText
+} from 'material-ui/Card';
 
 // components
 import Countdown from './Countdown';
@@ -15,31 +22,35 @@ class RaceCard extends Component {
   render() {
     const { item, isRaceDetails } = this.props
     return (
-      <span>
-        { 
-          isRaceDetails &&
-          <p>Race {item.raceNumber} - {item.raceName}</p>
-        }
+      <Card>
+        <CardHeader
+          title={'Race ' + item.raceNumber + ' - ' + item.raceName}
+          subtitle={'Meeting ' + item.meeting.meetingName  + '(' + item.meeting.location + ')'}
+          expandable={false}
+        />
+        
         {
           !isRaceDetails &&
-          <p><Link to={'/race/' + item.raceName}>Race {item.raceNumber} - {item.raceName}</Link></p>
+          <div>
+            <CardText>
+              <Countdown endDate={item.raceStartTime} suffix='to go' onFinishedCountdown={() => this.props.onRaceStarted()}/>
+            </CardText>
+            <CardActions>
+              <Link to={'/race/' + item.raceName}>View</Link>
+            </CardActions>
+          </div>
         }
-        
-        <p>Meeting {item.meeting.meetingName} ({item.meeting.location})</p>
-        
-        { 
-          !isRaceDetails &&
-          <Countdown endDate={item.raceStartTime} suffix='to go' onFinishedCountdown={() => this.props.onRaceStarted()}/>
-        }
-        
+
         {
           item.runners &&
-          <Runners runners={item.runners}/>
+          <CardText>
+            <h4>Runners</h4>
+            <Runners runners={item.runners}/>
+          </CardText>
         }
-      </span>
+      </Card>
     )
   }
-
 }
 
 RaceCard.propTypes = {

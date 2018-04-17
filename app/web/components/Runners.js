@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
+import {List, ListItem}     from 'material-ui/List';
 
 
 const mappedItems = (runners) => {
   return (
     runners.map((it, i) =>
-      <li key={i}>
-        <p>{it.position} - {it.name}</p>
-      </li>
+      <ListItem 
+        key={i}
+        primaryText={it.position + ' - ' + it.name}
+      />
     )
   )
 }
 
+/**
+ * Displays the list a runners with the position and the name.
+ */
 export default class Runners extends Component {
   
   render() {
     return (
-      <div>
-        <h4>Runners</h4>
-        <ul>{mappedItems(this.props.runners)}</ul>        
-      </div>
+      <List>
+        {mappedItems(this.props.runners)}
+      </List>
     )
   }
 }

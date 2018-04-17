@@ -23,9 +23,7 @@ export default class List extends Component {
     const mappedItems = (items) => {
       return (
         items.map((it, i) =>
-          <li key={i}>
-            <RaceCard item={it} isRaceDetails={false} onRaceStarted={() => this.props.onRaceStarted()}/>
-          </li>
+          <RaceCard key={it.raceName} item={it} isRaceDetails={false} onRaceStarted={() => this.props.onRaceStarted()}/>
         )
       )
     }
@@ -34,19 +32,19 @@ export default class List extends Component {
       <div>
         {raceType.match('all|r') &&
           <div>
-            <h4>Thoroughbred</h4>
+            <h4>Thoroughbred Racing</h4>
             <ul>{mappedItems(sortRacesForType(items, 'R'))}</ul>
           </div>}
 
         {raceType.match('all|g') &&
           <div>
-            <h4>Greyhounds</h4>
+            <h4>Greyhounds Racing</h4>
             <ul>{mappedItems(sortRacesForType(items, 'G'))}</ul>
           </div>}
 
         {raceType.match('all|h') &&
           <div>
-            <h4>Harness</h4>
+            <h4>Harness Racing</h4>
             <ul>{mappedItems(sortRacesForType(items, 'H'))}</ul>
           </div>}
       </div>
