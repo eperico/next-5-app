@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes            from 'prop-types';
 
 // components
-import Race from './Race';
+import RaceCard from './RaceCard';
 
 
 const sortByClosingTime = (a, b) => new Date(a.raceStartTime) - new Date(b.raceStartTime)
@@ -24,7 +24,7 @@ export default class List extends Component {
       return (
         items.map((it, i) =>
           <li key={i}>
-            <Race item={it} onRaceStarted={() => this.props.onRaceStarted()}/>
+            <RaceCard item={it} isRaceDetails={false} onRaceStarted={() => this.props.onRaceStarted()}/>
           </li>
         )
       )

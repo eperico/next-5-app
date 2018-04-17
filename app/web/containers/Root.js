@@ -11,6 +11,7 @@ import {
 import App   from './App';
 import Home  from './Home';
 import Races from './Races';
+import Race  from './Race';
 
 
 // Basic router to select races based on race type
@@ -18,6 +19,7 @@ const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="races/:raceType" component={Races}/>
+    <Route path="race/:raceName" component={Race}/>
   </Route>
 );
 
