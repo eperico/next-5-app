@@ -15,6 +15,7 @@ class Race extends Component {
     return (
       <span>
         <p>Race {item.raceNumber} - {item.raceName}</p>
+        <p>Meeting {item.meeting.meetingName} ({item.meeting.location})</p>
         <Countdown endDate={item.raceStartTime} suffix='to go' onFinishedCountdown={() => this.props.onRaceStarted()}/>
       </span>
     )
