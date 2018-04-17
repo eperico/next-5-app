@@ -20,21 +20,10 @@ It is also the destination of the minified bundle.
 
 The entry point the web app is `app/web/index.js`.
 
-## Configured Scripts
 
-### Running in dev/production
+### Running the project
 
-There are 2 defined scripts in package.json:
+Beware [Next 5 server](https://github.com/eperico/next-5-server) server needs to be running to fech the data
 
-  1. `start`
-  2. `bundle`
-
-
-`start` kicks off a development webpack server on port 4000, it utilizes hot reloading
-with some redux time machine capabilities.
-
-You can have a look at the [Redux dev tool extension](https://github.com/zalmoxisus/redux-devtools-extension)
-
-`bundle` creates a minified JavaScript bundle (that also houses the minified
-css) and places it next to the `index.html` in `web/public` that you can serve
-with any static file server.
+1. Run `npm start`
+2. Open your browser on http://localhost:4000

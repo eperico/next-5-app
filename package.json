@@ -5,8 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "node server",
-    "bundle": "webpack --config web/webpack/web.prod.config.js --progress --colors"
+    "start": "node server"
   },
   "author": "eperico",
   "license": "ISC",
