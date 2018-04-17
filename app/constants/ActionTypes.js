@@ -2,3 +2,8 @@ export const FETCH_RACES              = 'FETCH_RACES'
 export const FETCH_RACES_PENDING      = 'FETCH_RACES_PENDING'
 export const FETCH_RACES_REJECTED     = 'FETCH_RACES_REJECTED'
 export const FETCH_RACES_FULFILLED    = 'FETCH_RACES_FULFILLED'
+
+export const FETCH_RACE               = 'FETCH_RACE'
+export const FETCH_RACE_PENDING       = 'FETCH_RACE_PENDING'
+export const FETCH_RACE_REJECTED      = 'FETCH_RACE_REJECTED'
+export const FETCH_RACE_FULFILLED     = 'FETCH_RACE_FULFILLED'

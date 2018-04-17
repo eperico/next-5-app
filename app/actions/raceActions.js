@@ -7,7 +7,7 @@ import {
 const NB_RACES = 5
 
 /*
-* Fetches specified number of non finished races from TAB API.
+* Fetches specified number of non finished races
 */
 const fetchRaces = () => {
   const url = `${FETCH_RACES_URL}?maxRaces=${NB_RACES}`;
@@ -17,6 +17,18 @@ const fetchRaces = () => {
   }
 }
 
+/**
+ * Fetches the race for the specified name
+ */
+const fetchRace = (name) => {
+  const url = `${FETCH_RACES_URL}/${name}`;
+  return {
+    type: types.FETCH_RACE,
+    payload: axios.get(url)
+  }
+}
+
 export {
-  fetchRaces
+  fetchRaces,
+  fetchRace
 };
