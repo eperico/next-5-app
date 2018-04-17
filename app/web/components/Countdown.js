@@ -75,8 +75,8 @@ class Countdown extends Component {
       // check if countdown has started to avoid re-rendering after fetching the data
       if (this.state.started) {
         this.props.onFinishedCountdown();
+        this.setState(initialState);
       }
-      this.setState(initialState);
     }
   }
 
