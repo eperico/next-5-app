@@ -34,10 +34,6 @@ with some redux time machine capabilities.
 
 You can have a look at the [Redux dev tool extension](https://github.com/zalmoxisus/redux-devtools-extension)
 
-Also make sure you have the [Chrome extension](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/related?utm_source=chrome-app-launcher-info-dialog) to avoid Access-Control-Allow-Origin issue running locally
-
-
 `bundle` creates a minified JavaScript bundle (that also houses the minified
 css) and places it next to the `index.html` in `web/public` that you can serve
 with any static file server.
-
